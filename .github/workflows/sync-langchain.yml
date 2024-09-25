@@ -1,0 +1,25 @@
+name: Sync LangChain Branch
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天凌晨 0 点运行
+
+jobs:
+  sync-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout LangChain Branch
+        uses: actions/checkout@v3
+        with:
+          ref: LangChain # 你的分支名称
+      - name: Fetch Upstream Changes
+        run: |
+          git remote add upstream https://github.com/Hk-Gosuto/ChatGPT-Next-Web-LangChain.git
+          git fetch upstream
+      - name: Merge Upstream Main
+        run: |
+          git checkout main
+          git merge upstream/main
+      - name: Push Changes
+        run: |
+          git push origin LangChain # 你的分支名称
