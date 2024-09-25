@@ -3,6 +3,7 @@ name: Sync LangChain Branch
 on:
   schedule:
     - cron: '0 0 * * *' # 每天凌晨 0 点运行
+  workflow_dispatch:
 
 jobs:
   sync-branch:
