@@ -1,4 +1,4 @@
-name: Sync LangLangChain    
+name: Sync LangChain    
 
 permissions:
   contents: write
