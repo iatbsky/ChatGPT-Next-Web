@@ -29,4 +29,6 @@ jobs:
         git remote add upstream https://github.com/Hk-Gosuto/ChatGPT-Next-Web-LangChain.git
         git fetch upstream
         git reset --hard upstream/main
+        git rm -r --cached .github/workflows
+        git commit -m "Remove workflow files before sync"
         git push origin LangChain --force
