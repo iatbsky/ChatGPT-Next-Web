@@ -1,4 +1,7 @@
-name: Sync Fork
+name: Sync LangLangChain    
+
+permissions:
+  contents: write
 
 on:
   schedule:
