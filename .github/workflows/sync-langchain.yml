@@ -1,8 +1,8 @@
-name: sync langchain
+name: Sync Fork
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每6小时运行一次
+    - cron: '0 0 * * *'  # 每天运行一次
   workflow_dispatch:  # 允许手动触发
 
 jobs:
@@ -25,5 +25,5 @@ jobs:
       run: |
         git remote add upstream https://github.com/Hk-Gosuto/ChatGPT-Next-Web-LangChain.git
         git fetch upstream
-        git merge upstream/main --allow-unrelated-histories
-        git push origin LangChain
+        git reset --hard upstream/main
+        git push origin LangChain --force
